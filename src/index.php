@@ -14,6 +14,7 @@
   </head>
   <body>
     <header>
+      <img src="img/menu.svg" class="menu">
       <img src="img/Anonymous Laughing Man.png" width="50px">
       <h1>Anonymous Forum</h1><br>
     </header>
