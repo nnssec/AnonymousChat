@@ -1,2 +1,2 @@
-# AnonymousChat
-This repo is for an anonymous chat application.
+# Anonymous Forum
+This repo is for an anonymous forum.
