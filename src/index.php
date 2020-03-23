@@ -10,7 +10,12 @@
     <link rel="shortcut icon" href="img/favicon.jpg">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
   </head>
   <body>
+    <header>
+      <img src="img/Anonymous Laughing Man.png" width="50px">
+      <h1>Anonymous Forum</h1><br>
+    </header>
   </body>
 </html>
