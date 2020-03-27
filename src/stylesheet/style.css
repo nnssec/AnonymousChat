@@ -68,6 +68,7 @@ header h1 {
 @media screen and (max-width: 600px) {
   .flex {
     width: 100%;
+    margin-top: 85px;
   }
 
   .flex_room {
