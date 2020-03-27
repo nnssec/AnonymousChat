@@ -20,7 +20,7 @@ header h1 {
 }
 
 .flex {
-  width: 1205px;
+  width: 1209px;
   margin: 100px auto 0px;
   display: flex;
   align-items: flex-start;
@@ -29,6 +29,7 @@ header h1 {
 
 .flex div {
   background-color: #F2F2F2;
+  border: solid 1px #A4A4A4;
   border-radius: 5px;
 }
 
@@ -50,7 +51,21 @@ header h1 {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 1205px) {
+@media screen and (max-width: 1209px) {
+  .flex {
+    width: 100%;
+  }
+
+  .flex_room {
+    width: calc(30% - 10px);
+  }
+
+  .flex_article {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .flex {
     width: 100%;
   }
