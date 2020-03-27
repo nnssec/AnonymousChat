@@ -13,8 +13,27 @@
   </head>
   <body>
     <header>
-      <img src="img/Anonymous Laughing Man.png" width="50px">
+      <a href="index.php"><img src="img/Anonymous Laughing Man.png" width="50px"></a>
       <h1>Anonymous Forum</h1><br>
     </header>
+    <div class="flex">
+      <div class="flex_room">
+        <h3>チャット部屋</h3>
+        <ul>
+            <li>【誰でも参加可能】匿名ルームⅠ</li>
+          <li>【誰でも参加可能】匿名ルームⅡ</li>
+          <li>【誰でも参加可能】匿名ルームⅢ</li>
+          <li>【レート1000over】ルームⅠ</li>
+          <li>【レート1000over】ルームⅡ</li>
+          <li>【レート1500over】ルームⅠ</li>
+          <li>【レート1500over】ルームⅡ</li>
+          <li>【レート2000over】ルームⅠ</li>
+        </ul>
+      </div>
+      <div class="flex_article">
+        <h3>読まれている記事</h3>
+        b
+      </div>
+    </div>
   </body>
 </html>

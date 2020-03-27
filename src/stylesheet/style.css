@@ -19,6 +19,52 @@ header h1 {
   font-family: 'Playfair Display', serif;
 }
 
+.flex {
+  width: 1205px;
+  margin: 100px auto 0px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.flex div {
+  background-color: #F2F2F2;
+  border-radius: 5px;
+}
+
+.flex h3 {
+  text-align: center;
+}
+
+.flex_room {
+  width: 300px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.flex_article {
+  width: 900px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1205px) {
+  .flex {
+    width: 100%;
+  }
+
+  .flex_room {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  .flex_article {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 425px) {
   header h1 {
     font-size: 1.5em;
