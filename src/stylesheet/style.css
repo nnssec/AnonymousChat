@@ -14,14 +14,15 @@ header img {
 
 header h1 {
   margin-top: 12px;
-  margin-bottom: -3px;
+  margin-bottom: -5px;
   margin-left: 73px;
   font-family: 'Playfair Display', serif;
 }
 
-header .menu {
-  right: 0;
-  margin-top: 10px;
-  margin-right: 8px;
-  position: absolute;
+@media screen and (max-width: 425px) {
+  header h1 {
+    font-size: 1.5em;
+    margin-top: 18px;
+    margin-bottom: 0;
+  }
 }
