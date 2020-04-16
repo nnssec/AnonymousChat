@@ -26,6 +26,7 @@
           <a class="nav-item nav-link active" href="./index.php">ホーム <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="#">チャットルーム</a>
           <a class="nav-item nav-link" href="#">記事一覧</a>
+          <a class="nav-item nav-link" href="#">お問い合わせ</a>
           <?php if (isset($_SESSION["NAME"])) { echo '<a class="nav-item nav-link" href="setting.php">アカウントメニュー</a>';}?>
           <a class="nav-item nav-link" href="<?php session_start(); if (!isset($_SESSION["NAME"])) { echo "login.php";} else { echo "logout.php";} ?>"><?php if (!isset($_SESSION["NAME"])) { echo "ログイン";} else { echo "ログアウト";} ?></a>
         </div>
@@ -37,7 +38,7 @@
           <div class="border rounded-lg bg-light mb-3">
             <h5 class="text-center m-3 font-weight-bold">チャットルーム</h5>
             <ul>
-              <li><a href="room/index.php">【誰でも参加可能】匿名ルームⅠ</a></li>
+              <li><a href="room/anonymous1.php">【誰でも参加可能】匿名ルームⅠ</a></li>
               <li>【誰でも参加可能】匿名ルームⅡ</li>
               <li>【誰でも参加可能】匿名ルームⅢ</li>
               <li>【レート1000over】ルームⅠ</li>
