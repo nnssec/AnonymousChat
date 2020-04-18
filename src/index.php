@@ -38,7 +38,7 @@
           <div class="border rounded-lg bg-light mb-3">
             <h5 class="text-center m-3 font-weight-bold">チャットルーム</h5>
             <ul>
-              <li><a href="room/anonymous1.php">【誰でも参加可能】匿名ルームⅠ</a></li>
+              <li><a href="room/chat.php?room=1">【誰でも参加可能】匿名ルームⅠ</a></li>
               <li>【誰でも参加可能】匿名ルームⅡ</li>
               <li>【誰でも参加可能】匿名ルームⅢ</li>
               <li>【レート1000over】ルームⅠ</li>
