@@ -1,7 +1,50 @@
+<?php
+if(empty($_GET["room"])) {
+  header("Location: ./chat.php?room=1");
+} elseif($_GET["room"] >= 1) {
+  if($_GET["room"] > 8) {
+    header("Location: ./chat.php?room=1");
+  }
+} else {
+  header("Location: ./chat.php?room=1");
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>【誰でも参加可能】匿名ルームⅠ - Anonymous Forum</title>
+    <title>
+      <?php
+      if(!empty($_GET["room"])) {
+        switch($_GET["room"]) {
+          case "1":
+          echo "【誰でも参加可能】匿名ルームⅠ";
+          break;
+          case "2":
+          echo "【誰でも参加可能】匿名ルームⅡ";
+          break;
+          case "3":
+          echo "【誰でも参加可能】匿名ルームⅢ";
+          break;
+          case "4":
+          echo "【レート1000over】ルームⅠ";
+          break;
+          case "5":
+          echo "【レート1000over】ルームⅡ";
+          break;
+          case "6":
+          echo "【レート1500over】ルームⅠ";
+          break;
+          case "7":
+          echo "【レート1500over】ルームⅡ";
+          break;
+          case "8":
+          echo "【レート2000over】ルームⅠ";
+          break;
+        }
+      }
+      ?>
+    </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
@@ -14,6 +57,17 @@
   </head>
   <body>
     <script>
+    window.onload = function () {
+    autoScroll();
+    }
+    var $scrollY = 0;
+    function autoScroll() {
+      var $sampleBox = document.getElementById( "scroll-box" );
+      $sampleBox.scrollTop = ++$scrollY;
+      if( $scrollY < $sampleBox.scrollHeight - $sampleBox.clientHeight ){
+          autoScroll();
+      }
+    }
     </script>
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="../index.php">
@@ -25,7 +79,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="../index.php">ホーム <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">チャットルーム</a>
+          <a class="nav-item nav-link" href="./chat.php?room=1">チャットルーム</a>
           <a class="nav-item nav-link" href="#">記事一覧</a>
           <a class="nav-item nav-link" href="#">お問い合わせ</a>
           <?php if (isset($_SESSION["NAME"])) { echo '<a class="nav-item nav-link" href="setting.php">アカウントメニュー</a>';}?>
@@ -33,14 +87,45 @@
         </div>
       </div>
     </nav>
-    <h4 class="mt-3 text-center">【誰でも参加可能】匿名ルームⅠ</h4>
+    <h4 class="mt-3 text-center">
+      <?php
+      if(!empty($_GET["room"])) {
+        switch($_GET["room"]) {
+          case "1":
+          echo "【誰でも参加可能】匿名ルームⅠ";
+          break;
+          case "2":
+          echo "【誰でも参加可能】匿名ルームⅡ";
+          break;
+          case "3":
+          echo "【誰でも参加可能】匿名ルームⅢ";
+          break;
+          case "4":
+          echo "【レート1000over】ルームⅠ";
+          break;
+          case "5":
+          echo "【レート1000over】ルームⅡ";
+          break;
+          case "6":
+          echo "【レート1500over】ルームⅠ";
+          break;
+          case "7":
+          echo "【レート1500over】ルームⅡ";
+          break;
+          case "8":
+          echo "【レート2000over】ルームⅠ";
+          break;
+        }
+      }
+      ?>
+    </h4>
     <div class="container mt-3">
       <div class="card">
         <div class="card-header">
           チャット履歴
-          <a href="./chat.php"><img src="img/reload.svg" class="float-right"></a>
+          <a href="./chat.php?room=<?php if(!empty($_GET["room"])) {echo $_GET["room"];}?>"><img src="img/reload.svg" class="float-right"></a>
         </div>
-        <div class="card-body overflow-auto js-auto-scroll" style="height:400px;">
+        <div class="card-body overflow-auto" id="scroll-box" style="height:400px;">
           <?php
           // DBからデータ(投稿内容)を取得
           $stmt = select();

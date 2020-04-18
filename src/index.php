@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="./index.php">ホーム <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">チャットルーム</a>
+          <a class="nav-item nav-link" href="room/chat.php?room=1">チャットルーム</a>
           <a class="nav-item nav-link" href="#">記事一覧</a>
           <a class="nav-item nav-link" href="#">お問い合わせ</a>
           <?php if (isset($_SESSION["NAME"])) { echo '<a class="nav-item nav-link" href="setting.php">アカウントメニュー</a>';}?>
@@ -39,13 +39,13 @@
             <h5 class="text-center m-3 font-weight-bold">チャットルーム</h5>
             <ul>
               <li><a href="room/chat.php?room=1">【誰でも参加可能】匿名ルームⅠ</a></li>
-              <li>【誰でも参加可能】匿名ルームⅡ</li>
-              <li>【誰でも参加可能】匿名ルームⅢ</li>
-              <li>【レート1000over】ルームⅠ</li>
-              <li>【レート1000over】ルームⅡ</li>
-              <li>【レート1500over】ルームⅠ</li>
-              <li>【レート1500over】ルームⅡ</li>
-              <li>【レート2000over】ルームⅠ</li>
+              <li><a href="room/chat.php?room=2">【誰でも参加可能】匿名ルームⅡ</a></li>
+              <li><a href="room/chat.php?room=3">【誰でも参加可能】匿名ルームⅢ</a></li>
+              <li><a href="room/chat.php?room=4">【レート1000over】ルームⅠ</a></li>
+              <li><a href="room/chat.php?room=5">【レート1000over】ルームⅡ</a></li>
+              <li><a href="room/chat.php?room=6">【レート1500over】ルームⅠ</a></li>
+              <li><a href="room/chat.php?room=7">【レート1500over】ルームⅡ</a></li>
+              <li><a href="room/chat.php?room=8">【レート2000over】ルームⅠ</a></li>
             </ul>
           </div>
         </div>
