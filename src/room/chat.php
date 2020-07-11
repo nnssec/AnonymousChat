@@ -1,12 +1,6 @@
 <?php
 if(empty($_GET["room"])) {
   header("Location: ./chat.php?room=1");
-} elseif($_GET["room"] >= 1) {
-  if($_GET["room"] > 8) {
-    header("Location: ./chat.php?room=1");
-  }
-} else {
-  header("Location: ./chat.php?room=1");
 }
 ?>
 
@@ -62,9 +56,9 @@ if(empty($_GET["room"])) {
     }
     var $scrollY = 0;
     function autoScroll() {
-      var $sampleBox = document.getElementById( "scroll-box" );
-      $sampleBox.scrollTop = ++$scrollY;
-      if( $scrollY < $sampleBox.scrollHeight - $sampleBox.clientHeight ){
+      var $scrollBox = document.getElementById( "scroll-box" );
+      $scrollBox.scrollTop = ++$scrollY;
+      if( $scrollY < $scrollBox.scrollHeight - $scrollBox.clientHeight ){
           autoScroll();
       }
     }
@@ -131,17 +125,23 @@ if(empty($_GET["room"])) {
           $stmt = select();
           foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
           // 投稿内容を表示
-          echo $message['name'],"：",$message['message']," (",$message['time'],")";
+          echo htmlspecialchars($message['name']."：".$message['message']." (".$message['time'].")");
           echo nl2br("\n");
           }
 
           // 投稿内容を登録
           if(isset($_POST["send"])) {
+            if(empty($_POST["name"])) {
+              $_POST["name"] = "Anonymous";
+            }
+            if(empty($_POST["message"])) {
+              $_POST["message"] = "本文なし";
+            }
             insert();
             // 投稿した内容を表示
             $stmt = select_new();
             foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
-              echo $message['name'],"：",$message['message']," (",$message['time'],")";
+              echo htmlspecialchars($message['name']."：".$message['message']." (".$message['time'].")");
               echo nl2br("\n");
             }
           }
